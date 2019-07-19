@@ -1,0 +1,25 @@
+server:
+  port: 10086
+#port: ${port:10086} #在jvm参数中超找到了port就用port 没有找到就用 10086
+
+
+spring:
+  application:
+    name: eureka_service
+
+eureka:
+  client:
+    service-url:
+      #eureka 服务地址
+      defaultZone: http://localhost:10086/eureka
+      #defaultZone: ${defaultZone:http://localhost:10086/eureka}
+
+    #集群请打开（默认打开）
+    fetch-registry: false #拉取注册
+    register-with-eureka: false #注册自己
+
+  server:
+    eviction-interval-timer-in-ms: 60000 #每隔60000毫秒（默认）去扫描已经失效的服务  30 + 60 = 90
+    enable-self-preservation: false  #自我保护机制(默认打开) 保护机制：当15min内前来续约的服务比例低于85% 则触发该机制
+
+

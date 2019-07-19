@@ -1,0 +1,21 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 30  #服务消费方每隔30秒（默认去拉取服务列表）
+
+spring:
+  application:
+    name: consumer
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+             timeoutInMilliseconds: 2000  #降级处理响应时间，超过时间就按照降级处理
+      circuitBreaker: #熔断机制：当前有20条请求其中50%的失败 则所有的服务进入降级处理，并在50000毫秒后重新尝试恢复
+        errorThresholdPercentage: 50 #触发熔断错误比例阈值，默认值50%
+        sleepWindowInMilliseconds: 50000  # 熔断后休眠时长，默认值5秒
+        requestVolumeThreshold: 20  #熔断触发小请求次数，默认值是20
