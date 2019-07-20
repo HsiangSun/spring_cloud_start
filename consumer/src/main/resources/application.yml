@@ -16,6 +16,25 @@ ribbon:
   MaxAutoRetriesNextServer: 0 # 重试多少次服务
   OkToRetryOnAllOperations: false # 是否对所有的请求方式都重试
 
+feign:
+  hystrix:
+    enabled: true #开启feign熔断处理 需要创建处理类
+  compression: #Gzip压缩
+    request:
+      enabled: true
+      mime-types: text/html,application/xml,application/json # 设置压缩的数据类型
+      min-request-size: 2048 # 设置触发压缩的大小下限
+    response:
+      enabled: true
+
+#设置日志记录级别
+logging:
+  level:
+    cn.hsiangsun:  debug
+
+
+
+
 
 hystrix:
   command:

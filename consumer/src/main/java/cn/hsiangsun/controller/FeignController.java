@@ -15,7 +15,6 @@ public class FeignController {
     @Autowired
     private UserClient userClient;
 
-
     @GetMapping("/{id}")
     public String findUserById(@PathVariable Integer id){
         return userClient.findUserById(id);

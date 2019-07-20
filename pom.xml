@@ -9,6 +9,7 @@
         <module>consumer</module>
         <module>eureka_service</module>
         <module>eureka_service</module>
+        <module>spring_gateWay</module>
     </modules>
 
     <parent>
