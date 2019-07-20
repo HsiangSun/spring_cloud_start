@@ -22,7 +22,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/consumer")
-//@DefaultProperties(defaultFallback = "defaultFailCall") //默认出错的处理方法(加在该类上)
+@DefaultProperties(defaultFallback = "defaultFailCall") //默认出错的处理方法(加在该类上)
 @EnableFeignClients //开启feign
 public class UserController {
 
@@ -34,7 +34,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     //@HystrixCommand(fallbackMethod = "failCallBack") //当方法执行失败时的降级处理(调用出错方法)
-//    @HystrixCommand
+    //@HystrixCommand
     public String findUserById(@PathVariable Integer id){
 //        List<ServiceInstance> user_serviceList = discoveryClient.getInstances("user_service");
 //        ServiceInstance serviceInstance = user_serviceList.get(0);
