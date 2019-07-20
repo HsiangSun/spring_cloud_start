@@ -5,10 +5,10 @@ spring:
     username: root
     password: 1314
   application:
-    name: user_service
+    name: user-service  #千万不能使用下划线！千万不能使用下划线！千万不能使用下划线！
 
 server:
-  port: 7777
+  port: ${port:7777}
   servlet:
     context-path: /cloud
 
