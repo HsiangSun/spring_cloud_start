@@ -10,9 +10,23 @@ spring:
           uri: https://github.com/HsiangSun/spring_cloud_config.git
           username: HsiangSun
           password: who3429347113  #application.yml
+  rabbitmq:
+    host: localhost
+    password: guest
+    username: guest
+    virtual-host: /
+    port: 5672
+
+
 
 
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        #暴露触发更新地址
+        include: bus-refresh

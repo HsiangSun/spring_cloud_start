@@ -8,6 +8,14 @@ spring:
       discovery:
         enabled: true
         service-id: config-server #eureka发现服务
+  rabbitmq:
+    host: localhost
+    password: guest
+    username: guest
+    virtual-host: /
+    port: 5672
+
+
 
 
 eureka:

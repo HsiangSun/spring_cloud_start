@@ -3,3 +3,4 @@
 target/
 test/
 */src/test/
+/service_config/src/main/resources/application.yml
