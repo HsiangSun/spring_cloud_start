@@ -9,7 +9,8 @@ spring:
       routes:
         #路由id 可以自由发挥
         - id: user-service-route
-          uri: http://127.0.0.1:7777  #这里是uri != url
+          #uri: http://127.0.0.1:7777  #这里是uri != url
+          uri: lb://user-service  #动态路由只需要指定服务名
           #http://localhost:10010/cloud/user/2
           #路由断言（匹配映射路径）
           predicates:
