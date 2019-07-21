@@ -10,6 +10,7 @@
         <module>eureka_service</module>
         <module>eureka_service</module>
         <module>spring_gateWay</module>
+        <module>service_config</module>
     </modules>
 
     <parent>

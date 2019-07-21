@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      #远程名称为:gateway-dev
+      name: gateway
+      profile: dev
+      label: master  #指定版本分支
+      discovery:
+        enabled: true
+        service-id: config-server #eureka发现服务
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
