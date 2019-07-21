@@ -14,7 +14,12 @@ spring:
           #http://localhost:10010/cloud/user/2
           #路由断言（匹配映射路径）
           predicates:
-            - Path=/cloud/user/** #所要匹配的路径 注意P大写
+            #- Path=/cloud/user/** #所要匹配的路径 注意P大写
+            #- Path=/**  #添加前缀
+            - Path=/api/cloud/user/**
+          filters: #路径过滤器
+            #- PrefixPath=/cloud/user/  #添加前缀
+            - StripPrefix=1  #去除前缀 /api/cloud/user/ => /cloud/user/ 去除第一个
 
 
 eureka:
