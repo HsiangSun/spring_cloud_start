@@ -9,7 +9,7 @@ spring:
         git:
           uri: https://github.com/HsiangSun/spring_cloud_config.git
           username: HsiangSun
-          password: who3429347113  #application.yml
+          password: XXXXXXXXX  #application.yml
   rabbitmq:
     host: localhost
     password: guest

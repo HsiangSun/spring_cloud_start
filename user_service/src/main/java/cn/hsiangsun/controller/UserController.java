@@ -18,12 +18,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Value("${test.name}")
-    private String name;
+   /* @Value("${test.name}")
+    private String name;*/
 
     @GetMapping("/{id}")
     public User findUserById(@PathVariable Integer id){
-        System.out.println("This value from remote config and timely refresh -->"+name);
+        //System.out.println("This value from remote config and timely refresh -->"+name);
         return userService.findUSerById(id);
     }
 
